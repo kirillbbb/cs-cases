@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getRandomItem(i) {
-        const actualCaseType = caseType;
+        const actualCaseType = (caseType === 'free1' || caseType === 'free2') ? 'armeiskoe' : caseType;
         const fileName = `${i}.png`;
         const itemData = inventoryData?.[actualCaseType]?.[fileName];
         const fullName = itemData?.name || `Предмет ${i}`;

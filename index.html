@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hype Cases</title>
+    <link rel="stylesheet" href="styles__joint.css">
+    <link rel="stylesheet" href="styles__homepage.css">
+    <link rel="stylesheet" href="styles__case.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="index.html" >
+                <img src="images/mini-logo.png" alt="Hype Cases">
+            </a>
+
+        </div>
+        <nav>
+            <ul>
+                <!--<li><a href="#">Мини-игры</a></li>
+                <li><a href="#">Кейсы</a></li>-->
+            </ul>
+        </nav>
+        <div class="user-panel">
+            <button class="balance-display" disabled>
+                Баланс:   <span id="balance-amount"> 0 ₽</span>
+            </button>
+            <a href="profile.html">
+                <button class="login-btn">Профиль</button>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<div class="page-content">
+    <div class="content-overlay">
+        <section class="dynamic-lenta">
+            <div class="lenta-track"></div>
+        </section>
+
+        <main>
+            <section class="banner">
+                <div class="banner-container">
+                    <img class="banner-big" src="images/newbanner2.png" alt="Hype Cases">
+                </div>
+
+            </section>
+
+            <section class="free-cases">
+                <h2>Бесплатные кейсы</h2>
+                <div class="free-cases-container">
+                    <a href="case.html?type=free1" class="free-case">
+                        <img src="images/free1.png" alt="Free Case 1">
+                        <button>FREE #1</button>
+                    </a>
+                    <a href="case.html?type=free2" class="free-case">
+                        <img src="images/free2.png" alt="Free Case 2">
+                        <button>FREE #2</button>
+                    </a>
+                </div>
+            </section>
+
+            <section class="rare-cases">
+                <h2>Кейсы редкости</h2>
+                <div class="cases">
+                    <div class="case">
+                        <a href="case.html?type=armeiskoe">
+                            <img src="images/armeiskoe-logo.png" alt="Армейское">
+                            <span>Армейское</span>
+                        </a>
+                        <a href="case.html?type=armeiskoe" class="price-btn">50 ₽</a>
+
+                    </div>
+                    <div class="case">
+                        <a href="case.html?type=zapreshennoe">
+                            <img src="images/zapreshennoe-logo.png" alt="Запрещенное">
+                            <span>Запрещенное</span>
+                        </a>
+                        <a href="case.html?type=zapreshennoe" class="price-btn">100 ₽</a>
+
+                    </div>
+                    <div class="case">
+                        <a href="case.html?type=zasecrechennoe">
+                            <img src="images/zasecrechennoe-logo.png" alt="Засекреченное">
+                            <span>Засекреченное</span>
+                        </a>
+                        <a href="case.html?type=zasecrechennoe" class="price-btn">300 ₽</a>
+                    </div>
+                    <div class="case">
+                        <a href="case.html?type=tainoe">
+                            <img src="images/tainoe-logo.png" alt="Тайное">
+                            <span>Тайное</span>
+                        </a>
+                        <a href="case.html?type=tainoe" class="price-btn">600 ₽</a>
+                    </div>
+                    <div class="case">
+                        <a href="case.html?type=perchatki">
+                            <img src="images/perchatki-logo.png" alt="Перчатки">
+                            <span>Перчатки</span>
+                        </a>                        <a href="case.html?type=perchatki" class="price-btn">11111 ₽</a>
+                    </div>
+                    <div class="case">
+                        <a href="case.html?type=nozh">
+                            <img src="images/nozh-logo.png" alt="Нож">
+                            <span>Нож</span>
+                        </a>
+                        <a href="case.html?type=nozh" class="price-btn">9999 ₽</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/mini-logo.png" alt="Hype Cases">
+            </div>
+            <div class="footer-links">
+                <a>Пользовательское соглашение</a>
+                <a>Политика конфиденциальности</a>
+                <a>Поддержка</a>
+            </div>
+            <div class="footer-social">
+                <a ><img src="/images/telegram.png" alt="Telegram"></a>
+                <a><img src="/images/vk.png" alt="VK"></a>
+                <a><img src="/images/discord.png" alt="Discord"></a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © 2025 Hype Cases. Все права защищены.
+        </div>
+    </footer>
+</div>
+
+<script src="lent.js"></script>
+</body>
+</html>

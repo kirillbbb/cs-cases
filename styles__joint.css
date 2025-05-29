@@ -1,0 +1,282 @@
+:root{
+    --colorMain: #397bd3;
+    --colorMainHover: #1f467c;
+}
+
+body {
+    background-color: #17171c;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    margin: 0;
+
+}
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #121212;
+}
+
+.banner-container {
+    position: relative;
+    display: inline-block;
+}
+
+.page-content {
+    background-image: url('images/dots-background-alt6.png');      /* путь к фону */
+    background-size: cover;                         /* растягивается на всю ширину и высоту */
+    background-repeat: no-repeat;                   /* без повторов */
+    background-position: top center;                /* центрировано по горизонтали */
+    min-height: 100vh;                              /* минимум — вся высота экрана */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+.content-overlay {
+    margin-top: -5px; /* или 0 — чтобы не было пустого зазора под <img> */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+
+footer {
+    margin-top: auto;
+}
+
+
+
+button, .price-btn, .open-case-btn, .balance-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+    border: 2px solid var(--colorMain);
+    background: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+.open-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button:hover, .price-btn:hover, .login-btn:hover, .open-case-btn:hover {
+    background-color: var(--colorMainHover);
+}
+
+
+/* --- Исправленная лента (Теперь движение ПЛАВНОЕ) --- */
+.dynamic-lenta {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.lenta-track {
+    display: flex;
+    gap: 15px;
+    transition: transform 1s ease-out;
+}
+.lenta-item {
+    width: 6.5vw;
+    height: auto; /* Убираем фиксированную высоту */
+    min-width: 70px;
+    border-radius: 5px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column; /* для вертикального расположения */
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(138, 32, 32, 0.1);
+    transition: border-color 0.5s ease, transform 0.3s ease;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+.lenta-item.armeiskoe {
+    border-color: blue;
+    background-color: rgba(0, 0, 255, 0.17); /* полупрозрачный синий */
+}
+
+.lenta-item.zasecrechennoe {
+    border-color: magenta;
+    background-color: rgba(255, 0, 255, 0.17); /* полупрозрачный фуксия */
+}
+
+.lenta-item.zapreshennoe {
+    border-color: purple;
+    background-color: rgba(128, 0, 128, 0.17); /* полупрозрачный пурпурный */
+}
+
+.lenta-item.tainoe {
+    border-color: red;
+    background-color: rgba(255, 0, 0, 0.17); /* полупрозрачный красный */
+}
+
+.lenta-item.perchatki {
+    border-color: green;
+    background-color: rgba(0, 255, 0, 0.17); /* полупрозрачный зеленый */
+}
+
+.lenta-item.nozh {
+    border-color: yellow;
+    background-color: rgba(255, 255, 0, 0.17); /* полупрозрачный желтый */
+}
+
+.lenta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ⬅️ по левой границе */
+    justify-content: flex-start; /* ⬅️ вверх */
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.lenta-item img {
+    width: 100%;
+    height: 5vw; /* или фиксированно, например 60px */
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+
+.item-model {
+    font-size: 0.8rem;
+    color: white;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.item-skin {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #ccc;
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    white-space: nowrap;       /* Запрет переноса текста */
+    overflow: hidden;          /* Скрытие лишнего текста */
+    text-overflow: ellipsis;
+}
+
+
+
+
+.cases {
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 10px;
+    margin-bottom: 8vh;
+}
+
+.case a {
+    text-decoration: none;
+    color: white;
+}
+
+.case img {
+    width: 12vw;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 10px;
+}
+
+.case:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.8));
+}
+
+html, body {
+    height: 100%;
+}
+
+
+footer {
+    background-color: #121212;
+    color: #fff;
+    padding: 30px 0 20px;
+
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--colorMainHover);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.footer-social img:hover {
+    opacity: 1;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 30px;
+    color: #666;
+    font-size: 14px;
+    padding: 0 20px;
+}
+

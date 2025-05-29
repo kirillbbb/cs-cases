@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Открытие кейса</title>
+  <link rel="stylesheet" href="styles__joint.css"/>
+  <link rel="stylesheet" href="styles__case.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+  <div class="nav-bar">
+    <button class="back-button" onclick="window.location.href='index.html'">← Вернуться на главную</button>
+    <div id="balance" class="balance-display">
+      Баланс: <span id="balance-amount">0 ₽</span>
+    </div>
+  </div>
+</header>
+
+<div id="notification" class="notification"></div>
+
+<main>
+  <div class="case-container">
+    <h2 id="case-title"></h2>
+    <img id="case-image" class="case-image" src="" alt="Кейс" />
+
+    <div class="open-button-wrapper">
+      <button id="open-case" class="open-case-btn">Открыть кейс</button>
+    </div>
+
+    <div class="roulette-wrapper">
+      <div class="win-indicator">▼</div>
+      <div class="case-roulette"></div>
+    </div>
+
+    <!-- Результат выпадения -->
+    <div class="case-drop-result">
+      <div class="drop-result" style="display: none;">
+        <div class="won-item">
+          <img src="" alt="" />
+          <p class="item-model"><strong></strong></p>
+          <p class="item-skin"></p>
+          <p class="item-price"></p>
+        </div>
+        <div class="action-buttons">
+          <button class="action-btn open-again">Открыть снова</button>
+          <button class="action-btn sell">Продать</button>
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Содержимое кейса -->
+    <h3>Содержимое кейса</h3>
+    <div class="case-items"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">
+      <img src="images/mini-logo.png" alt="Hype Cases" />
+    </div>
+    <div class="footer-links">
+      <a>Пользовательское соглашение</a>
+      <a>Политика конфиденциальности</a>
+      <a>Поддержка</a>
+    </div>
+    <div class="footer-social">
+      <a ><img src="/images/telegram.png" alt="Telegram"></a>
+      <a><img src="/images/vk.png" alt="VK"></a>
+      <a><img src="/images/discord.png" alt="Discord"></a>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    © 2025 Hype Cases. Все права защищены.
+  </div>
+</footer>
+
+<script src="case.js"></script>
+</body>
+</html>

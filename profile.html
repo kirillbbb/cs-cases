@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Профиль — Hype Cases</title>
+    <link rel="stylesheet" href="styles__joint.css" />
+    <link rel="stylesheet" href="styles__profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header>
+    <div class="nav-bar">
+        <div class="logo">
+            <a href="index.html" >
+                <img src="images/mini-logo.png" alt="Hype Cases">
+            </a>
+
+        </div>
+        <div class="user-panel">
+                <a href="index.html" >
+                <button class="login-btn">Выйти</button>
+                </a>
+        </div>
+    </div>
+</header>
+
+<div class="page-content">
+    <main class="profile">
+        <h1>Профиль</h1>
+
+        <div class="profile-balance">
+            <p>Ваш баланс:  <span class="balance-amount">0 ₽</span></p>
+            <button class="topup-btn">Пополнить баланс</button>
+        </div>
+
+        <div class="inventory">
+            <h2>Ваш инвентарь</h2>
+            <div class="inventory-grid empty">
+                <p class="empty-text">У вас пока нет предметов</p>
+            </div>
+        </div>
+
+    </main>
+
+</div>
+<div id="notification" class="notification"></div>
+
+<script src="profile.js"></script>
+
+</body>
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="images/mini-logo.png" alt="Hype Cases">
+        </div>
+        <div class="footer-links">
+            <a>Пользовательское соглашение</a>
+            <a>Политика конфиденциальности</a>
+            <a>Поддержка</a>
+        </div>
+        <div class="footer-social">
+            <a ><img src="/images/telegram.png" alt="Telegram"></a>
+            <a><img src="/images/vk.png" alt="VK"></a>
+            <a><img src="/images/discord.png" alt="Discord"></a>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        © 2025 Hype Cases. Все права защищены.
+    </div>
+</footer>
+</html>

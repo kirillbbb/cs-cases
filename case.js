@@ -12,7 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const balanceDisplay = document.getElementById("balance-amount");
 
     let inventoryData = {};
-    let balance = parseFloat(localStorage.getItem("userBalance")) || 1000;
+
+
+    if (localStorage.getItem("userBalance") === null) {
+        localStorage.setItem("userBalance", "1000");
+    }
+
+    let balance = parseFloat(localStorage.getItem("userBalance"));
     updateBalanceDisplay();
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -26,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const priceRanges = {
-        free1: { min: 5, max: 10 },
-        free2: { min: 10, max: 20 },
-        armeiskoe: { min: 10, max: 70 },
-        zapreshennoe: { min: 100, max: 200 },
-        zasecrechennoe: { min: 200, max: 500 },
-        tainoe: { min: 300, max: 1000 },
-        perchatki: { min: 10000, max: 20000 },
+        free1: { min: 0, max: 10 },
+        free2: { min: 0, max: 20 },
+        armeiskoe: { min: 10, max: 65 },
+        zapreshennoe: { min: 65, max: 120 },
+        zasecrechennoe: { min: 180, max: 350 },
+        tainoe: { min: 300, max: 800 },
+        perchatki: { min: 10000, max: 14000 },
         nozh: { min: 8000, max: 16000 }
     };
 

@@ -25,7 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const caseType = urlParams.get("type");
     const storageKey = `generatedItems-${caseType}`;
 
-    caseImage.src = `images/${caseType}-logo.png`;
+    if (caseType === 'free1' || caseType === 'free2') {
+        caseImage.src = `images/${caseType}-logo.png`;
+    } else {
+        caseImage.src = `images/${caseType}.png`;
+    }
+
 
     const caseOpenPrices = {
         free1: 0,

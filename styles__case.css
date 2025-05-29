@@ -332,7 +332,6 @@
     display: none;
     z-index: 3;
     backdrop-filter: blur(4px);
-    font-family: inherit;
 }
 
 .case-item.armeiskoe {

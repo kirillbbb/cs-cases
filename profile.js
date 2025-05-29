@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     topupButton.addEventListener("click", () => {
         balance += 500;
         updateBalanceDisplay();
-        showNotification("+1000 ₽ добавлено на баланс");
+        showNotification("+500 ₽ добавлено на баланс");
     });
 
     updateBalanceDisplay();

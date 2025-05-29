@@ -25,11 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const caseType = urlParams.get("type");
     const storageKey = `generatedItems-${caseType}`;
 
-    if (caseType === 'free1' || caseType === 'free2') {
-        caseImage.src = `images/${caseType}.png`;
-    } else {
-        caseImage.src = `images/${caseType}-logo.png`;
-    }
+    caseImage.src = `images/${caseType}-logo.png`;
+
+    const caseOpenPrices = {
+        free1: 0,
+        free2: 0,
+        armeiskoe: 50,
+        zapreshennoe: 100,
+        zasecrechennoe: 300,
+        tainoe: 600,
+        nozh: 13000,
+        perchatki: 15000
+    };
 
     const priceRanges = {
         free1: { min: 0, max: 10 },
@@ -39,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
         zasecrechennoe: { min: 180, max: 350 },
         tainoe: { min: 300, max: 800 },
         nozh: { min: 8000, max: 16000 },
-        perchatki: { min: 10000, max: 20000 }
+        perchatki: { min: 10000, max: 19000 }
     };
 
     function updateBalanceDisplay() {
-        balanceDisplay.textContent = `${balance.toFixed(2)} ₽`;
+        balanceDisplay.textContent = `\u00A0${balance.toFixed(2)}  ₽`;
         localStorage.setItem("userBalance", balance);
     }
 
@@ -54,14 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getRandomItem(i) {
-        const actualCaseType = (caseType === 'free1' || caseType === 'free2') ? 'armeiskoe' : caseType;
+        const actualCaseType = caseType;
         const fileName = `${i}.png`;
         const itemData = inventoryData?.[actualCaseType]?.[fileName];
         const fullName = itemData?.name || `Предмет ${i}`;
         const [model, skin] = fullName.split(" | ");
 
         const price = calculateItemPrice(caseType);
-
         return {
             src: `new_images_numbers/${actualCaseType}/${fileName}`,
             name: fullName,
@@ -118,7 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function startRoulette() {
-        const openCost = priceRanges[caseType]?.min || 0;
+        const openCost = caseOpenPrices[caseType] ?? 0;
+
         if (openCost > balance) {
             showNotification("Недостаточно средств для открытия кейса!");
             return;
@@ -170,6 +177,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const items = JSON.parse(localStorage.getItem(storageKey));
         const winningItem = items[Math.floor(Math.random() * items.length)];
 
+        const lastSaved = localStorage.getItem("lastDropSaved");
+        if (lastSaved !== winningItem.src) {
+            const inventory = JSON.parse(localStorage.getItem("userInventory")) || [];
+            inventory.push({
+                ...winningItem,
+                className: winningItem.className || caseType
+            });
+            localStorage.setItem("userInventory", JSON.stringify(inventory));
+            localStorage.setItem("lastDropSaved", winningItem.src);
+        }
+
         const rouletteSequence = [
             ...Array.from({ length: 38 }, () => items[Math.floor(Math.random() * items.length)]),
             winningItem,
@@ -198,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         setTimeout(() => {
-            // Наполнение .drop-result
             const resultImg = dropResult.querySelector("img");
             const resultModel = dropResult.querySelector(".item-model strong");
             const resultSkin = dropResult.querySelector(".item-skin");
@@ -214,19 +231,16 @@ document.addEventListener("DOMContentLoaded", () => {
             dropResultContainer.style.opacity = "1";
 
             dropResult.querySelector(".open-again").onclick = () => {
-                const inventory = JSON.parse(localStorage.getItem("userInventory")) || [];
-                inventory.push({
-                    ...winningItem,
-                    className: winningItem.className || caseType
-                });
-                localStorage.setItem("userInventory", JSON.stringify(inventory));
                 localStorage.removeItem(storageKey);
+                localStorage.removeItem("lastDropSaved"); // ❗ Сброс чтобы новый дроп сохранить
                 location.reload();
             };
 
-
-
             dropResult.querySelector(".sell").onclick = () => {
+                const inventory = JSON.parse(localStorage.getItem("userInventory")) || [];
+                const updatedInventory = inventory.filter(item => item.src !== winningItem.src);
+                localStorage.setItem("userInventory", JSON.stringify(updatedInventory));
+
                 balance += winningItem.rawPrice;
                 updateBalanceDisplay();
                 showNotification(`Предмет "${winningItem.name}" продан за ${winningItem.price}`);
@@ -234,13 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             dropResult.querySelector(".save").onclick = () => {
-                const inventory = JSON.parse(localStorage.getItem("userInventory")) || [];
-                inventory.push({
-                    ...winningItem,
-                    className: winningItem.className || caseType
-                });
-                localStorage.setItem("userInventory", JSON.stringify(inventory));
-                showNotification(`"${winningItem.name}" добавлен в инвентарь`);
+                showNotification(`"${winningItem.name}" уже добавлен в инвентарь`);
                 setTimeout(() => location.reload(), 1500);
             };
 
@@ -258,7 +266,6 @@ document.addEventListener("DOMContentLoaded", () => {
     openCaseButton.addEventListener("click", startRoulette);
 });
 
-// Универсальное уведомление
 function showNotification(message) {
     const notification = document.getElementById("notification");
     notification.textContent = message;

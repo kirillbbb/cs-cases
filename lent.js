@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const itemsCount = Math.floor(screenWidth / (itemSize + 15));
     const balanceSpan = document.getElementById("balance-amount");
     const storedBalance = parseFloat(localStorage.getItem("userBalance")) || 0;
-    balanceSpan.textContent = `${storedBalance.toFixed(2)} ₽`;
+    balanceSpan.textContent = `\u00A0${storedBalance.toFixed(2)} ₽`;
     const folderChances = [
         { name: "armeiskoe", chance: 45 },
         { name: "zasecrechennoe", chance: 25 },
@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const img = document.createElement("img");
         img.src = itemData.src;
-        img.alt = "Image";
         item.appendChild(img);
 
         if (itemData.name) {

@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
         zapreshennoe: { min: 65, max: 120 },
         zasecrechennoe: { min: 180, max: 350 },
         tainoe: { min: 300, max: 800 },
-        perchatki: { min: 10000, max: 14000 },
-        nozh: { min: 8000, max: 16000 }
+        nozh: { min: 8000, max: 16000 },
+        perchatki: { min: 10000, max: 20000 }
     };
 
     function updateBalanceDisplay() {

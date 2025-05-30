@@ -52,7 +52,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* распределим блоки */
-    height: 18vh;
     padding: 10px;
     border-radius: 10px;
     text-align: center;

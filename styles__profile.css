@@ -97,6 +97,7 @@
     cursor: pointer;
 
     align-self: center;
+    max-width: 10vw;
 }
 
 .sell-btn:hover {

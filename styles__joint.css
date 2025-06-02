@@ -38,11 +38,11 @@ body {
 }
 
 .page-content {
-    background-image: url('images/dots-background-alt6.png');      /* путь к фону */
-    background-size: cover;                         /* растягивается на всю ширину и высоту */
-    background-repeat: no-repeat;                   /* без повторов */
-    background-position: top center;                /* центрировано по горизонтали */
-    min-height: 100vh;                              /* минимум — вся высота экрана */
+    background-image: url('images/dots-background-alt6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }

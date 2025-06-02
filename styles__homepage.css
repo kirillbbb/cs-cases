@@ -58,9 +58,11 @@
 .free-cases-container {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 20px;
+    gap: 2.5vw;
+
+    padding: 30px 20px 20px;
     flex-wrap: wrap;
+
 }
 
 .free-case {
@@ -70,7 +72,10 @@
     min-width: 200px;
     text-decoration: none;
     transition: transform 0.3s ease;
+    margin-bottom: 5vh;
 }
+
+
 
 .free-case:hover {
     transform: scale(1.05);

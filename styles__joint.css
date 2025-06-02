@@ -25,8 +25,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px 2vw 5px;
     background: #121212;
+}
+.mini-logo{
+    height: 6vh;
 }
 
 .banner-container {
@@ -83,7 +86,15 @@ button, .price-btn, .open-case-btn, .balance-display {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: center;
+    margin: 5px;
 }
+.price-btn {
+     width: 75px; /* или больше — подгоняй по самой широкой */
+     text-align: center;
+     justify-content: center;
+ }
+
+
 .open-button-wrapper {
     display: flex;
     justify-content: center;
@@ -205,8 +216,8 @@ button:hover, .price-btn:hover, .login-btn:hover, .open-case-btn:hover {
     gap: 2vw;
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding: 10px;
     margin-bottom: 8vh;
+    padding: 0px 10px 10px;
 }
 
 .case a {

@@ -15,15 +15,38 @@
 
 <header>
   <div class="nav-bar">
-    <button class="back-button" onclick="window.location.href='index.html'">← Вернуться на главную</button>
-
-    <a href="profile.html">
-      <button class="balance-display">
-        Баланс:   <span id="balance-amount"> 0 ₽</span>
-      </button>
+    <a href="index.html" >
+      <img class="mini-logo" src="images/mini-logo-4.png" alt="Hype Cases">
     </a>
+
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link ">Главная</a>
+      <a href="#cases" class="nav-link active">Кейсы</a>
+      <a href="profile.html" class="nav-link">Профиль</a>
+    </nav>
+
+    <div class="user-panel">
+      <a href="profile.html">
+        <button class="balance-display">
+          Баланс: <span id="balance-amount"> 0 ₽</span>
+        </button>
+      </a>
+
+      <a href="profile.html">
+        <img class="mini-logo img-profile" src="images/profile.png" >
+      </a>
+
+
+    </div>
+
+
   </div>
 </header>
+
+
+
+
+
 
 <div id="notification" class="notification"></div>
 
